@@ -9,13 +9,16 @@ use think\Db;
 
 class Index extends Controller
 {
+  public function index(){
+    return "this is wishing——wall";
+  }
   //查看所有卡片信息
   public function w_select()
   {
     //查找页数
     $page = trim(Request::instance()->param("pages"));
-
-    $count= Db::name('wish_love')->count();//获取数据的总数量
+    //获取数据的总数量
+    $count= Db::name('wish_love')->count();
 
     $info = new IndexModel();
 
